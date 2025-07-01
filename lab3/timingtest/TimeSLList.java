@@ -36,7 +36,7 @@ public class TimeSLList {
             }
             sw = new Stopwatch();
             for(int k = 0;k<option;k++){
-                m.addLast(0);
+                m.getLast();
             }
             timeInSeconds = sw.elapsedTime();
             Ns.addLast(i);

@@ -34,7 +34,7 @@ public class TestBuggyAList {
               int randVal = StdRandom.uniform(0, 100);
               L.addLast(randVal);
               bug.addLast(randVal);
-             
+
           } else if (operationNumber ==1&&L.size()!=0) {
               int number = L.getLast();
               int number2 = bug.getLast();
