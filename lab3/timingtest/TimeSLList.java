@@ -22,28 +22,31 @@ public class TimeSLList {
     }
 
     public static void timeGetLast() {
-        SLList<Integer> m  = null;
+        System.out.println("Timing table for getLast");
         AList<Integer> Ns = new AList<>();
-        AList<Double> times = new AList<>();
         AList<Integer> op = new AList<>();
-        double timeInSeconds=0;
-        int option = 1000;
-        Stopwatch sw;
-        for(int i=1000;i<=128000;i*=2){
-            m = new SLList<>();
-            for(int j=0; j<i;j++){
-                m.addLast(0);
-            }
-            sw = new Stopwatch();
-            for(int k = 0;k<option;k++){
-                m.getLast();
-            }
-            timeInSeconds = sw.elapsedTime();
-            Ns.addLast(i);
-            times.addLast(timeInSeconds);
-            op.addLast(option);
+        int x = 1000;
+        for (int i = 1; i <= 8; i+=1) {
+            op.addLast(10000);
+            Ns.addLast(x);
+            x*=2;
         }
-        printTimingTable(Ns,times,op);
-    }
+        AList<Double> times = new AList<>();
+        for (int i = 0; i < Ns.size(); i += 1) {
+            int n = Ns.get(i);
+            int m = op.get(i);
+            SLList<Integer> a = new SLList<>();
+            for (int j = 0; j < n; j += 1) {
+                a.addLast(114514);
+            }
+            Stopwatch sw = new Stopwatch();
+            for (int j = 0; j< m;j+=1){
+                a.getLast();
+            }
+            double time = sw.elapsedTime();
+            times.addLast(time);
+        }
+        printTimingTable(Ns, times, op);
 
+}
 }

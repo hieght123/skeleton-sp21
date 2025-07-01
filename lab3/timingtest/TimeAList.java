@@ -22,22 +22,25 @@ public class TimeAList {
     }
 
     public static void timeAListConstruction() {
-        Stopwatch sw;
-        AList<Integer>Ns = new AList<>();
-        AList<Double>times = new AList<>();
-        AList<Integer> op = new AList<>();
-        double timeInSeconds = 0;
-        for (int i = 1000; i <= 128000; i *= 2) {
-            AList<Integer> m = new AList<>();
-              sw = new Stopwatch();
-            for (int j = 0; j < i; j++) {
-                m.addLast(0);
-            }
-              timeInSeconds = sw.elapsedTime();
-            Ns.addLast(i);
-            times.addLast(timeInSeconds);
-            op.addLast(i);
+        System.out.println("Timing table for addLast");
+        AList<Integer> Ns = new AList<>();
+        int x = 1000;
+        for (int i = 1; i <= 8; i+=1) {
+            Ns.addLast(x);
+            x*=2;
         }
-        printTimingTable(Ns,times,op);
+        AList<Double> times = new AList<>();
+        for (int i = 0; i < Ns.size(); i += 1) {
+            int n = Ns.get(i);
+            AList<Integer> a = new AList<>();
+            Stopwatch sw = new Stopwatch();
+            for (int j = 0; j < n; j += 1) {
+                a.addLast(114514);
+            }
+            double time = sw.elapsedTime();
+            times.addLast(time);
+        }
+        printTimingTable(Ns, times, Ns);
     }
-}
+    }
+
