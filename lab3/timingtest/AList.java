@@ -34,7 +34,7 @@ public class AList<Item> {
     /** Inserts X into the back of the list. */
     public void addLast(Item x) {
         if (size == items.length) {
-            resize(size *2 );
+            resize(size * 2);
         }
 
         items[size] = x;
@@ -56,7 +56,7 @@ public class AList<Item> {
     }
 
     /** Deletes item from back of the list and
-      * returns deleted item. */
+     * returns deleted item. */
     public Item removeLast() {
         Item x = getLast();
         items[size - 1] = null;

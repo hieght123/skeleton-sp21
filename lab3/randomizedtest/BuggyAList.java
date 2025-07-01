@@ -30,9 +30,6 @@ public class BuggyAList<Item> {
         for (int i = 0; i < size; i += 1) {
             a[i] = items[i];
         }
-        for(int i = size;i<a.length;i++){
-            a[i] = null;
-        }
         items = a;
     }
 
@@ -63,7 +60,7 @@ public class BuggyAList<Item> {
       * returns deleted item. */
     public Item removeLast() {
         if ((size < items.length / 4) && (size > 4)) {
-            resize(size / 4);
+            resize(items.length / 4);
         }
         Item x = getLast();
         items[size - 1] = null;
