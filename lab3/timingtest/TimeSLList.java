@@ -26,7 +26,7 @@ public class TimeSLList {
         AList<Integer> Ns = new AList<>();
         AList<Integer> op = new AList<>();
         int x = 1000;
-        for (int i = 1; i <= 8; i+=1) {
+        for (int i = 1; i <= 7; i+=1) {
             op.addLast(10000);
             Ns.addLast(x);
             x*=2;

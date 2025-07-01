@@ -25,7 +25,7 @@ public class TimeAList {
         System.out.println("Timing table for addLast");
         AList<Integer> Ns = new AList<>();
         int x = 1000;
-        for (int i = 1; i <= 8; i+=1) {
+        for (int i = 1; i <= 7; i+=1) {
             Ns.addLast(x);
             x*=2;
         }
