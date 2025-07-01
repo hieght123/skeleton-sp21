@@ -25,6 +25,7 @@ public class TimeAList {
         Stopwatch sw;
         AList<Integer>Ns = new AList<>();
         AList<Double>times = new AList<>();
+        AList<Integer> op = new AList<>();
         double timeInSeconds = 0;
         for (int i = 1000; i <= 128000; i *= 2) {
             AList<Integer> m = new AList<>();
@@ -35,7 +36,8 @@ public class TimeAList {
               timeInSeconds = sw.elapsedTime();
             Ns.addLast(i);
             times.addLast(timeInSeconds);
+            op.addLast(i);
         }
-        printTimingTable(Ns,times,Ns);
+        printTimingTable(Ns,times,op);
     }
 }
