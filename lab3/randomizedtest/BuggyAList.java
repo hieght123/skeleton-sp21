@@ -30,6 +30,9 @@ public class BuggyAList<Item> {
         for (int i = 0; i < size; i += 1) {
             a[i] = items[i];
         }
+        for(int i = size;i<a.length;i++){
+            a[i] = null;
+        }
         items = a;
     }
 
